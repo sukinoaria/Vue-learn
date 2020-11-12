@@ -4,5 +4,5 @@
 
 - 基础知识点
   - 基础语法，组件示例，axios请求，计算属性
-  - [传送门]((0.basic/README.md))
+  - [传送门](0.basic/README.md)
 
