@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Chap01 - demo1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- message output -->
+        <h1>{{message}}</h1>
+
+        <!-- if else -->
+        <h2 v-if="ok===true">Yes</h2>
+        <h2 v-else>No</h2>
+
+        <!-- js event -->
+        <button v-on:click="clickButton()">Click me</button>
+
+        <!-- for loop -->
+        <ol v-for="(item, index) in items" :key="index">
+            <li>{{index}}--{{item.value}}</li>
+        </ol>
+
+        <!-- v-model bind -->
+        <div>
+            <span>input value:</span>
+            <input type="text" v-model="username"><br>
+            <span> value is:</span>
+            <label>{{username}}</label>
+        </div>
+
+        <div>
+            <!-- v-model bind lazy mode-->
+            <span>input value:</span>
+            <input type="text" v-model.lazy="input2"><br>
+            <span> value is:</span>
+            <label>{{input2}}</label>
+        </div>
+
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "hello Vue",
+                ok: true,
+                items: [{
+                    value: "List item 1"
+                }, {
+                    value: "List item 2"
+                }, {
+                    value: "List item 3"
+                }],
+                username: "",
+                input2: "",
+            },
+            methods: {
+                clickButton: function() {
+                    this.message = "button clicked ... ";
+                    this.ok = false;
+                }
+            },
+
+        })
+    </script>
+
+</body>
+
+
+</html>

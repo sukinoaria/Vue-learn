@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>vue component</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-bind:param_name -->
+        <comp1 v-for="(item,index) in items" v-bind:val="item" v-bind:idx="index"></comp1>
+    </div>
+
+
+
+
+    <script>
+        Vue.component("comp1", {
+            // param_name: val
+            props: ['val', 'idx'],
+            template: "<li>{{idx}} : {{val}}</li>"
+        })
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                items: ["Vue", "React", "angularJS"]
+            }
+        })
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
